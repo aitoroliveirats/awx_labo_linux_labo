@@ -1,0 +1,9 @@
+---
+- hosts: "{{ hosts }}"
+  become: true
+  tasks:
+    - name: creamos directorio /var/tmp/test321
+      file:
+        path: /var/tmp/test321
+        state: directory
+      when: ansible_all_ipv4_addresses == "192.168.17.109"

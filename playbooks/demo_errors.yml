@@ -1,0 +1,12 @@
+---
+- hosts: "{{ host }}"
+  become: true
+  tasks:
+    - name: valido conexion apache
+      uri:
+        url: "http://{{ host }}/noexisteee"
+      ignore_errors: true
+      register: variable
+    - name: debug
+      debug:
+        msg: "{{ variable }}"

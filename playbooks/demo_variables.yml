@@ -1,0 +1,8 @@
+---
+- hosts: "{{ hosts }}"
+  vars:
+    nombre: joan
+  tasks:
+    - name: contenido var 
+      debug:
+        msg: "{{ nombre }}"

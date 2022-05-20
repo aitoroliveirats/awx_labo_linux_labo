@@ -1,0 +1,12 @@
+---
+- name: config httpd.conf
+  copy: 
+    src: httpd.conf.renzo
+    dest: /etc/httpd/conf/httpd.conf
+  notify: "restart service"
+
+- name: config welcome
+  copy:
+    src: index.html.renzo
+    dest: /var/www/html/index.html
+  notify: "restart service"
